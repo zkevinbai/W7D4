@@ -6,8 +6,11 @@ class PokemonDetail extends React.Component {
   }
 
   render () {
+    console.log(this.props.match.params.id)
     return (
-      
+      <h1>H!</h1>
     );
   }
 }
+
+export default PokemonDetail;

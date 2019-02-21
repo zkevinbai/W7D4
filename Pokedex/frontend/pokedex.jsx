@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RECEIVE_ALL_POKEMON, receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
-import {fetchAllPokemon} from './util/api_utils';
+import * as Actions from './actions/pokemon_actions';
+import {fetchAllPokemon, fetchPokemon} from './util/api_utils';
 import configureStore from './store/store';
 import { selectAllPokemon } from './reducers/selectors';
 import Root from "./components/root";
-import { HashRouter, Route } from 'react-router-dom';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEL = document.getElementById("root");
@@ -14,12 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.receiveAllPokemon = receiveAllPokemon;
-  window.RECEIVE_ALL_POKEMON = RECEIVE_ALL_POKEMON;
+  // these are actions
+  window.receiveAllPokemon = Actions.receiveAllPokemon;
+  window.RECEIVE_ALL_POKEMON = Actions.RECEIVE_ALL_POKEMON;
+  window.requestAllPokemon = Actions.requestAllPokemon;
+  window.selectAllPokemon = Actions.selectAllPokemon;
+  
+  window.receivePokemon = Actions.receivePokemon;
+  window.requestPokemon = Actions.requestPokemon;
+  window.RECEIVE_POKEMON = Actions.RECEIVE_POKEMON;
+  // these are ajax requests
+  window.fetchPokemon = fetchPokemon;
   window.fetchAllPokemon = fetchAllPokemon;
-  window.requestAllPokemon = requestAllPokemon;
-  window.selectAllPokemon = selectAllPokemon;
-
   ReactDOM.render(<Root store={store}/>, rootEL);
 })
 

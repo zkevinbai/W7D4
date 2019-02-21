@@ -5,7 +5,7 @@ export const PokemonIndexItem = ({pokemon}) => {
   // debugger
   return (
     <li>
-      <Link to={"/pokemon/" + pokemon.id }>
+      <Link to={"/pokemon/" + pokemon.id } pokemon = {pokemon}>
         <p>{pokemon.id}</p>
         <p>{pokemon.name}</p>
         <img src={pokemon.image_url} />
