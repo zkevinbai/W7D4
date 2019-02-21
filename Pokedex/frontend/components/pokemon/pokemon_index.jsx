@@ -1,4 +1,5 @@
 import React from 'react';
+import {PokemonIndexItem} from './pokemon_index_item'
 
 class PokemonIndex extends React.Component {
   constructor(props){
@@ -10,18 +11,32 @@ class PokemonIndex extends React.Component {
   }
   
   render () {
-    debugger
+    // debugger
+
+    const pokemonItems = this.props.pokemon.map(poke => 
+    <PokemonIndexItem key={poke.id} pokemon={poke} 
+    />);
+
     return(
-      <ul>
-        {this.props.pokemon.map((monster) => {
-          return (<li>
-            <p>{monster.name}</p>
-            <img src={monster.image_url}/>
-          </li>)
-        })}
-      </ul>
-    );svg
+      <section> 
+        <ul>
+          {pokemonItems}
+        </ul>
+      </section>
+    );
   }
 }
 
+
 export default PokemonIndex
+
+// return (<li>
+//   <p>{monster.name}</p>
+//   <img src={monster.image_url} />
+// </li>)
+
+// {
+//   this.props.pokemon.map(pkmn => {
+//     return PokemonIndexItem(pkmn);
+//   })
+// }
