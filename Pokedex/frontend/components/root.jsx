@@ -2,7 +2,7 @@ import React from "react";
 import {Provider} from "react-redux";
 import PokemonIndexContainer from "./pokemon/pokemon_index_container";
 import { HashRouter, Route } from 'react-router-dom';
-import PokemonDetail from './pokemon/pokemon_detail';
+import PokemonDetailContainer from './pokemon/pokemon_detail_container';
 
 class Root extends React.Component{
 
@@ -17,8 +17,8 @@ class Root extends React.Component{
         <HashRouter>
           {/* <PokemonIndexContainer /> */}
           <>
-            <Route path="/" component={PokemonIndexContainer} />
-            <Route path="/pokemon/:id" component={PokemonDetail} />
+            <Route exact path="/" component={PokemonIndexContainer} />
+            <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer} />
           </>
         </HashRouter>  
       </Provider>

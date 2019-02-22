@@ -6,7 +6,7 @@ section ul {
   grid-auto-rows: 100px;
 }
 
-li {
+ul li {
   list-style: none;
   background: bisque;
   border: 1px solid black;
@@ -16,10 +16,12 @@ li {
 }
 
 li p {
+  text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 15px;
   color: black;
+  text-decoration: line;
 }
 
 li img {
@@ -28,4 +30,20 @@ li img {
   border: 1px solid black;
   background: whitesmoke;
   padding: 5px;
+}
+
+li:hover{
+  transition: 1s transform;
+  /* transform: scale(1.15); */
+  background: rgb(231, 45, 45);
+  box-shadow: 1px 1px 1px 1px black;
+  color: white;
+  font-size: 130%;
+}
+
+.show{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: lightcoral;
 }
